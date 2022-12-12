@@ -1,0 +1,67 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@mixin icon() {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--n-text-color);
+  &::before {
+    content: '';
+    display: block;
+  }
+}
+@mixin label-icon() {
+  @include icon();
+  margin-top: 6px;
+  border: 1px solid var(--n-option-text-color-active);
+}
+
+.studio-header {
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 10px;
+  box-shadow: 0px 0px 2px 2px var(--n-border-color);
+  position: relative;
+  z-index: 30;
+}
+.icon-button {
+  margin-top: 2px;
+}
+.icon-vertical {
+  @include icon();
+  &::before {
+    width: 6px;
+    height: 18px;
+    background-color: var(--n-text-color);
+  }
+}
+.label-icon-vertical {
+  @include label-icon();
+  &::before {
+    width: 6px;
+    height: 18px;
+    border-right: 1px solid var(--n-option-text-color-active);
+  }
+}
+.label-icon-horizontal {
+  @include label-icon();
+  &::before {
+    width: 18px;
+    height: 12px;
+    border-bottom: 1px solid var(--n-option-text-color-active);
+  }
+}
